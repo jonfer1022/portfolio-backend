@@ -17,6 +17,10 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
 
+app.get("/", (req,res) =>{
+  res.send("¡Hello whoever you are!")
+})
+
 app.post("/", async (req, res) =>{
   if(!req.body.token){
     return res.send("NOT TOKEN")
